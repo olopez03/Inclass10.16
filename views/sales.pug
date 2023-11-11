@@ -1,0 +1,21 @@
+include layouts/layout
+
+.container.col-6.p-4
+    table.table.table-striped
+        thead
+            tr.table-primary
+                th(scope='col') Date
+                th(scope='col') Customer
+                th(scope='col') Product
+                th(scope='col') Quantity
+                th(scope='col') Total Sales
+        tbody
+            each sale in sales
+                tr
+                    th(scope='row')= sale.Date
+                    td= sale.CustomerName
+                    td= sale.Product
+                    td= sale.Quantity
+                    td= '$' + sale.TotalSales
+
+    a.btn.btn-warning(href='/home' role='button') Home
